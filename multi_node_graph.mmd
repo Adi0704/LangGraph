@@ -1,0 +1,25 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	classifier(classifier)
+	joke_teller(joke_teller)
+	fact_provider(fact_provider)
+	advisor(advisor)
+	fallback(fallback)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> classifier;
+	classifier -.-> advisor;
+	classifier -.-> fact_provider;
+	classifier -.-> fallback;
+	classifier -.-> joke_teller;
+	advisor --> __end__;
+	fact_provider --> __end__;
+	fallback --> __end__;
+	joke_teller --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
